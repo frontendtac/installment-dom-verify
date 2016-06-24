@@ -2,7 +2,6 @@
 jQuery('.installment-show').click(function($) {
 	setTimeout(function() { 
 		if (jQuery(".tbl-payment-system").length) {
-
 			var getTexts = [];
 			var x = jQuery(".tbl-payment-system tr:contains(8X)");
 			var resultTexts = x.add(jQuery("~ tr", x)).map(function() {
@@ -10,7 +9,6 @@ jQuery('.installment-show').click(function($) {
 			   return text.replace(/S(?=\/)/, "C")
 			   })
 			}).get();
-			//console.log('"' + resultTexts.join('", "') + '"');
 
 			var elements = jQuery('table td:contains(X)').parent().nextUntil().addBack().children(':first-child');
 			elements.each(function() {
@@ -27,7 +25,6 @@ jQuery('.installment-show').click(function($) {
 				jQuery(this).text(jQuery(this).text().replace('11X S/JUROS', '11X S/JUROS'));
 				jQuery(this).text(jQuery(this).text().replace('12X S/JUROS', '12X S/JUROS'));
 			});
-
 		}
 	}, 100);
 });
